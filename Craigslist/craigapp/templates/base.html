@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Craigslist</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <style>
+    	.home{
+    		float: right;
+    		/*font-size: 15px;*/
+    		padding-top:6px;
+    		margin-right:130px;
+    	}
+    	.heading{
+    		margin-left: 130px;
+    	}
+    	.header{
+    		background-color: red;
+    		margin-top: 0px;
+    		padding:10px;
+    		color: grey;
+    		}
+
+    	.section{
+    		padding:50px;
+    		display: flex;
+    		transform: translateY(-60px);
+    		text-align: center;
+    		font-weight: bolder;
+    	}
+    	.cards{
+    		display: flex;
+    		flex-wrap: wrap;
+    		flex-direction: flex-start;
+    		align-content: space-between;
+    		transform: translateY(-130px);
+    	}
+    	.card1,.card2,.card3{
+    		margin-right: 20px;
+    		padding-top: 40px;
+    		margin-left: 180px;
+    		margin-right: 140px;
+    		/*box-shadow: 2px black;*/
+    		/*transform: translateX(140px);*/
+    	}
+    	.section1{
+    		/*margin-top: 60px;*/
+    		transform: translateY(-40px);
+    	}
+    	.card{
+    		padding: 10px;
+    		margin: 25px;
+    	}
+    	.brand-logo{
+    		transform: translateX(70px);
+    	}
+    	.tab{
+    		transform: translateX(-70px);
+    		font-size: 25px;
+    	}
+    	.card-content
+    	{
+    		text-align: center;
+    	}
+    	/*button{text-align: center;
+
+    	}*/
+    </style>
+
+</head>
+<body>
+	
+	  <nav>
+    <div class="nav-wrapper">
+     <form action="/home">
+      <a type="submit" class="brand-logo">CRAIGSLIST</a>
+     </form>
+    </div>
+  </nav>
+
+<div class="section">
+<h2>WHAT DO YOU WANT TO SEARCH FOR ON CODEDADIES LIST??</h2>
+</div>
+
+<div class="section1">
+    
+             <div class="row">
+    <div class="col s12 m4">
+      <div class="card">
+    
+        <div class="card-content">
+         <i class="large material-icons" style="color: #EE6E73">flash_on</i>
+                <p>Fast craigslist web scraper</p>
+                <p class="light center">Scrape away right here with a beautiful GUI.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+      <div class="card">
+      
+        <div class="card-content">
+           <i class="large material-icons" style="color: orange">camera</i>
+                <p>Filter your searches</p>
+                <p class="light center">We built in functionality to filter based on pricing.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s12 m4">
+      <div class="card">
+        
+        <div class="card-content">
+ <i class="large material-icons" style="color: blue">chrome_reader_mode</i>
+                <p>A much sexier front-end to Craigslist</p>
+                <p class="light center">We built this with ❤️</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+           
+           </div>
+<form action="/new_search/" method="post">{% csrf_token %}
+  <div class="row">
+
+    <div class="col s12">
+    	<div class="input-field col s12">
+          <input id="search" type="text" name="search">
+          <label for="search">Search</label>
+        </div>
+    </div>
+
+    <div class="center">
+    	<button type=" submit" class=" btn-large" style="background-color: #EE6E73">Submit <i class="material-icons right">send</i></button>
+    </div>
+    
+  </div>
+</form>
+
+     {% block body %}{% endblock %}
+</body>
+
+</html>
